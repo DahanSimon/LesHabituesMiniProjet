@@ -17,75 +17,72 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
+        label.font = UIFont(name: "Lato-Bold", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var addressLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
+        label.font = UIFont(name: "Lato-Regular", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var zipcodeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
+        label.font = UIFont(name: "Lato-Regular", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var bestOfferLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = UIColor(red: 74/256, green: 144.0/256, blue: 226.0/256, alpha: 1.0)
+        label.font = UIFont(name: "Lato-Regular", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 5.0
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        [self.nameLabel,
+         self.addressLabel,
+         self.zipcodeLabel,
+         self.bestOfferLabel].forEach { stack.addArrangedSubview($0) }
+        return stack
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         addSubview(chainLogo)
-        addSubview(nameLabel)
-        addSubview(addressLabel)
-        addSubview(zipcodeLabel)
-        addSubview(bestOfferLabel)
+        addSubview(stackView)
         NSLayoutConstraint.activate([
             chainLogo.topAnchor.constraint(equalTo: topAnchor),
             chainLogo.bottomAnchor.constraint(equalTo: bottomAnchor),
             chainLogo.leftAnchor.constraint(equalTo: leftAnchor),
             chainLogo.widthAnchor.constraint(equalTo: chainLogo.heightAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: addressLabel.topAnchor),
-            nameLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            nameLabel.leftAnchor.constraint(equalTo: chainLogo.rightAnchor),
-            
-            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            addressLabel.bottomAnchor.constraint(equalTo: zipcodeLabel.topAnchor),
-            addressLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            addressLabel.leftAnchor.constraint(equalTo: chainLogo.rightAnchor),
-            
-            zipcodeLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor),
-            zipcodeLabel.bottomAnchor.constraint(equalTo: bestOfferLabel.topAnchor),
-            zipcodeLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            zipcodeLabel.leftAnchor.constraint(equalTo: chainLogo.rightAnchor),
-            
-            bestOfferLabel.topAnchor.constraint(equalTo: zipcodeLabel.bottomAnchor),
-            bestOfferLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bestOfferLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            bestOfferLabel.leftAnchor.constraint(equalTo: chainLogo.rightAnchor)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor),
+            stackView.leftAnchor.constraint(equalTo: chainLogo.rightAnchor, constant: 5)
         ])
     }
     
     func setupCell(imageUrl: String, name: String, address: String, zipcode: String, bestOffer: Double) {
         chainLogo.kf.indicatorType = .activity
         chainLogo.kf.setImage(with: URL(string: imageUrl), placeholder: nil, options: nil)
-        nameLabel.text = name
+        nameLabel.text = name.uppercased()
         addressLabel.text = address
         zipcodeLabel.text = zipcode
         bestOfferLabel.text = "Up to \(String(bestOffer))$ offered "

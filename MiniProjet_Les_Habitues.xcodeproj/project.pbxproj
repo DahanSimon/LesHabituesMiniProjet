@@ -22,6 +22,8 @@
 		6BECA29927DA65680074217E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECA29827DA65680074217E /* ViewModel.swift */; };
 		6BECA29B27DA6B6D0074217E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BECA29A27DA6B6D0074217E /* Main.storyboard */; };
 		6BECA29D27DA6F1C0074217E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECA29C27DA6F1C0074217E /* CustomTableViewCell.swift */; };
+		6BECA29F27DAA0040074217E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BECA29E27DA9EC70074217E /* Lato-Regular.ttf */; };
+		6BECA2A127DAA36B0074217E /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BECA2A027DAA36B0074217E /* Lato-Bold.ttf */; };
 		E9AEC720018359CA5C8D7006 /* Pods_MiniProjet_Les_HabituesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CAE3A0C7C8C7C52ECE1720 /* Pods_MiniProjet_Les_HabituesTests.framework */; };
 		F7A3B7B31583517770DAD974 /* Pods_MiniProjet_Les_Habitues_MiniProjet_Les_HabituesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F26FC5859B927BDA25AFA83 /* Pods_MiniProjet_Les_Habitues_MiniProjet_Les_HabituesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		6BECA29827DA65680074217E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6BECA29A27DA6B6D0074217E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6BECA29C27DA6F1C0074217E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		6BECA29E27DA9EC70074217E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		6BECA2A027DAA36B0074217E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		6F26FC5859B927BDA25AFA83 /* Pods_MiniProjet_Les_Habitues_MiniProjet_Les_HabituesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniProjet_Les_Habitues_MiniProjet_Les_HabituesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A24D79297F2879F59C4E1C /* Pods-MiniProjet_Les_Habitues-MiniProjet_Les_HabituesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniProjet_Les_Habitues-MiniProjet_Les_HabituesUITests.release.xcconfig"; path = "Target Support Files/Pods-MiniProjet_Les_Habitues-MiniProjet_Les_HabituesUITests/Pods-MiniProjet_Les_Habitues-MiniProjet_Les_HabituesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9DDE76592BA91E7523805BFE /* Pods-MiniProjet_Les_HabituesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniProjet_Les_HabituesTests.debug.xcconfig"; path = "Target Support Files/Pods-MiniProjet_Les_HabituesTests/Pods-MiniProjet_Les_HabituesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				6BECA25B27DA3DE50074217E /* SceneDelegate.swift */,
 				6BECA26227DA3DE60074217E /* Assets.xcassets */,
 				6BECA26427DA3DE60074217E /* LaunchScreen.storyboard */,
+				6BECA29E27DA9EC70074217E /* Lato-Regular.ttf */,
+				6BECA2A027DAA36B0074217E /* Lato-Bold.ttf */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BECA29B27DA6B6D0074217E /* Main.storyboard in Resources */,
+				6BECA2A127DAA36B0074217E /* Lato-Bold.ttf in Resources */,
 				6BECA26627DA3DE60074217E /* LaunchScreen.storyboard in Resources */,
 				6BECA26327DA3DE60074217E /* Assets.xcassets in Resources */,
+				6BECA29F27DAA0040074217E /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

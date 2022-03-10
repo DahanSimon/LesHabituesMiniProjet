@@ -9,6 +9,7 @@ import Foundation
 
 class ViewModel {
     let shops: Box<ShopDatas?> = Box(nil)
+    let bestOffers: Box<[Int: Double]> = Box([:])
     private let api = ApiService()
     func fecthShop() {
         api.getDatas { result in
@@ -21,5 +22,21 @@ class ViewModel {
                 }
             }
         }
+    }
+    
+    func getBestOffers() {
+        var bestOffers: [Int: Double] = [:]
+        for shop in shops.value!.data {
+            var bestOffer: Double = 0
+            for offer in shop.offers {
+                if let reduction = Double(offer.reduction) {
+                    if reduction > bestOffer {
+                        bestOffer = reduction
+                    }
+                }
+            }
+            bestOffers[shop.id] = bestOffer
+        }
+        self.bestOffers.value = bestOffers
     }
 }
