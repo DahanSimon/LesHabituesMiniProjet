@@ -6,26 +6,43 @@
 //
 
 import Foundation
+enum ApiError: Error {
+  case invalidResponse
+  case noData
+  case failedRequest
+  case invalidData
+}
 
-// MARK: - ShopData
-struct ShopData: Codable {
+// MARK: - ShopDatas
+struct ShopDatas: Codable {
+    let object: String
+    let total: Int
+    let hasMore: Bool
+    let data: [Datum]
+
+    enum CodingKeys: String, CodingKey {
+        case object, total
+        case hasMore = "has_more"
+        case data
+    }
+}
+
+// MARK: - Datum
+struct Datum: Codable {
     let id: Int
     let category: String
-    let categoryID: Int
     let offers: [Offer]
     let localisations: [Localisation]
-    let tags: [String]
-    let ecommercePrepayment, totalOffers: Int
+    let totalOffers: Int
     let pictureURL: String
+    let objectID: String
 
     enum CodingKeys: String, CodingKey {
         case id, category
-        case categoryID = "category_id"
         case offers, localisations
-        case tags = "_tags"
-        case ecommercePrepayment = "ecommerce_prepayment"
         case totalOffers = "total_offers"
         case pictureURL = "picture_url"
+        case objectID
     }
 }
 
@@ -33,18 +50,10 @@ struct ShopData: Codable {
 struct Localisation: Codable {
     let id: Int
     let name, address, zipcode: String
-    let geoloc: Geoloc
     let city: String
-}
-
-// MARK: - Geoloc
-struct Geoloc: Codable {
-    let lat, lng: Double
 }
 
 // MARK: - Offer
 struct Offer: Codable {
     let id, amount, reduction: String
 }
-
-typealias ShopDatas = [ShopData]
