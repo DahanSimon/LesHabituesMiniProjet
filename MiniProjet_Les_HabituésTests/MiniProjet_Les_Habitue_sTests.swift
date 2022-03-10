@@ -6,9 +6,9 @@
 //
 
 import XCTest
-@testable import MiniProjet_Les_Habitue_s
+@testable import MiniProjet_Les_Habitues
 
-class MiniProjet_Les_Habitue_sTests: XCTestCase {
+class LesHabituesTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
