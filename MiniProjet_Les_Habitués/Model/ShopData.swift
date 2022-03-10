@@ -30,7 +30,7 @@ struct ShopDatas: Codable {
 // MARK: - Datum
 struct Datum: Codable {
     let id: Int
-    let category: String
+    let chain,category: String
     let offers: [Offer]
     let localisations: [Localisation]
     let totalOffers: Int
@@ -38,7 +38,7 @@ struct Datum: Codable {
     let objectID: String
 
     enum CodingKeys: String, CodingKey {
-        case id, category
+        case id, chain, category
         case offers, localisations
         case totalOffers = "total_offers"
         case pictureURL = "picture_url"
