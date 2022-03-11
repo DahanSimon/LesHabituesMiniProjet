@@ -14,7 +14,13 @@ enum ApiError: Error {
 }
 
 // MARK: - ShopDatas
-struct ShopDatas: Codable {
+struct ShopDatas: Codable, Equatable {
+    static func == (lhs: ShopDatas, rhs: ShopDatas) -> Bool {
+        if lhs.object == rhs.object {
+            return true
+        } else { return false }
+    }
+    
     let object: String
     let total: Int
     let hasMore: Bool
@@ -30,7 +36,7 @@ struct ShopDatas: Codable {
 // MARK: - Datum
 struct Datum: Codable {
     let id: Int
-    let chain,category: String
+    let chain, category: String
     let offers: [Offer]
     let localisations: [Localisation]
     let totalOffers: Int

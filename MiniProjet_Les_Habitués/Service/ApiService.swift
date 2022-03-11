@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 class ApiService {
-    let url = "https://www.leshabitues.fr/testapi/shops"
+    private let url = "https://www.leshabitues.fr/testapi/shops"
     func getDatas(callback: @escaping (Result<ShopDatas, ApiError>) -> Void) {
         AF.request(url).response { response in
             DispatchQueue.main.async {

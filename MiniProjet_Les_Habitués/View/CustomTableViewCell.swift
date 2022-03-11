@@ -8,14 +8,14 @@
 import UIKit
 import Kingfisher
 class CustomTableViewCell: UITableViewCell {
-    lazy var chainLogo: UIImageView = {
+    private lazy var chainLogo: UIImageView = {
         let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFit
         imgView.translatesAutoresizingMaskIntoConstraints = false
         return imgView
     }()
     
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
         label.font = UIFont(name: "Lato-Bold", size: 15)
@@ -23,7 +23,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var addressLabel: UILabel = {
+    private lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
         label.font = UIFont(name: "Lato-Regular", size: 12)
@@ -31,7 +31,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var zipcodeLabel: UILabel = {
+    private lazy var zipcodeLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 196/256, green: 196/256, blue: 196/256, alpha: 1.0)
         label.font = UIFont(name: "Lato-Regular", size: 12)
@@ -39,7 +39,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var bestOfferLabel: UILabel = {
+    private lazy var bestOfferLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 74/256, green: 144.0/256, blue: 226.0/256, alpha: 1.0)
         label.font = UIFont(name: "Lato-Regular", size: 18)
@@ -47,7 +47,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 5.0
@@ -81,7 +81,7 @@ class CustomTableViewCell: UITableViewCell {
     
     func setupCell(imageUrl: String, name: String, address: String, zipcode: String, bestOffer: Double) {
         chainLogo.kf.indicatorType = .activity
-        chainLogo.kf.setImage(with: URL(string: imageUrl), placeholder: nil, options: nil)
+        chainLogo.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage(named: "placeholder-image"), options: nil)
         nameLabel.text = name.uppercased()
         addressLabel.text = address
         zipcodeLabel.text = zipcode

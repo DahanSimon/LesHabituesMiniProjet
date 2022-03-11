@@ -17,6 +17,7 @@ class ViewModel {
                 switch result {
                 case .success(let datas):
                     self.shops.value = datas
+                    self.getBestOffers(shopsToBrowse: self.shops.value)
                 case .failure(_):
                     print("fail")
                 }
@@ -24,9 +25,12 @@ class ViewModel {
         }
     }
     
-    func getBestOffers() {
+    func getBestOffers(shopsToBrowse: ShopDatas?) {
         var bestOffers: [Int: Double] = [:]
-        for shop in shops.value!.data {
+        guard let shops = shopsToBrowse else {
+            return
+        }
+        for shop in shops.data {
             var bestOffer: Double = 0
             for offer in shop.offers {
                 if let reduction = Double(offer.reduction) {
