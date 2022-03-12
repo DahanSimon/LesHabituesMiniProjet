@@ -1,0 +1,6 @@
+framework module Pods_MiniProjet_Les_Habitues_MiniProjet_Les_HabituesUITests {
+  umbrella header "Pods-MiniProjet_Les_Habitues-MiniProjet_Les_HabituesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

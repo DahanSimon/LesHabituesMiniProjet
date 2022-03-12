@@ -112,7 +112,7 @@
 			children = (
 				6BECA25827DA3DE50074217E /* MiniProjet_Les_Habitués */,
 				6BECA26F27DA3DE60074217E /* MiniProjet_Les_HabituesTests */,
-				6BECA27927DA3DE60074217E /* MiniProjet_Les_HabituésUITests */,
+				6BECA27927DA3DE60074217E /* MiniProjet_Les_HabituesUITests */,
 				6BECA25727DA3DE50074217E /* Products */,
 				EAD2FBF691139107AA276232 /* Pods */,
 				9B18AAE6E46F5AFADAD1ECBE /* Frameworks */,
@@ -153,13 +153,13 @@
 			path = MiniProjet_Les_HabituesTests;
 			sourceTree = "<group>";
 		};
-		6BECA27927DA3DE60074217E /* MiniProjet_Les_HabituésUITests */ = {
+		6BECA27927DA3DE60074217E /* MiniProjet_Les_HabituesUITests */ = {
 			isa = PBXGroup;
 			children = (
 				6BECA27A27DA3DE60074217E /* MiniProjet_Les_Habitue_sUITests.swift */,
 				6BECA27C27DA3DE60074217E /* MiniProjet_Les_Habitue_sUITestsLaunchTests.swift */,
 			);
-			path = "MiniProjet_Les_HabituésUITests";
+			path = MiniProjet_Les_HabituesUITests;
 			sourceTree = "<group>";
 		};
 		6BECA28927DA3EC20074217E /* Model */ = {
